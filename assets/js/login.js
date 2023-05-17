@@ -8,7 +8,7 @@ function main() {
       const username = input_usuario.value
       const password = input_senha.value
   
-      const login_url = "http://localhost:8000/api/token/"
+      const login_url = "https://apitarefas.onrender.com/api/token/"
       const opcoes = {
         method: "POST",
         body: JSON.stringify({ username, password }),
