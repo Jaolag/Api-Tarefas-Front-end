@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    background-image: url('/api/front-end/assets/img/fundo.png');
+    background-size: 100%;
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+.inputs {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttons {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #836FFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons[type="submit"]:hover {
+    background-color: #483D8B;
+}
+
+.buttons[type="reset"]:hover {
+    background-color: #483D8B;
+}
+
+.logout {
+    float: right;
+    justify-content: right;
+    text-align: right;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logout:hover{
+    background-color: #800000;
+}
+.form-register {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#list-tarefas {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+#list-tarefas th,
+#list-tarefas td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#list-tarefas th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+.tabela {
+    display: none;
+}
