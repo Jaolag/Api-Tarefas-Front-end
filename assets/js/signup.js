@@ -11,7 +11,7 @@ function main() {
   
       const data = { name, email, username, password, confirm_password}
   
-      const url = "http://localhost:8000/api/signup/"
+      const url = "https://apitarefas.onrender.com/api/signup/"
       const opcoes = {
         method: "POST",
         body: JSON.stringify(data),
