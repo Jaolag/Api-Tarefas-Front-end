@@ -1,4 +1,4 @@
-const baseURL = 'http://127.0.0.1:8000/api/tarefas';
+const baseURL = 'https://apitarefas.onrender.com/api/tarefas';
 const token = `Bearer ${localStorage.getItem("token_tarefas")}`;
 
 // Obtem a tabela onde as tarefas serão exibidas
