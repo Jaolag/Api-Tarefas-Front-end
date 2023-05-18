@@ -7,8 +7,12 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background-image: url('/assets/img/fundo.png');
-    background-size: 100%;
+    background: rgb(97,75,162);
+    background: linear-gradient(90deg, rgba(97,75,162,1) 
+    14%, rgba(55,24,147,1) 29%,
+     rgba(68,43,143,1) 45%, rgba(35,9,111,1) 56%,
+      rgba(42,19,108,1) 64%, rgba(20,2,71,1) 75%, rgba(69,44,144,1) 100%, rgba(0,212,255,1) 100%);
+    
 }
 
 h4 {
@@ -18,6 +22,7 @@ h4 {
 .inputs {
     width: 100%;
     padding: 10px;
+
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -54,13 +59,29 @@ h4 {
     cursor: pointer;
     text-decoration: none;
 }
-.logout:hover{
+
+.btn-remover {
+    justify-content: right;
+    text-align: right;
+    padding: 10px;
+
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout:hover,
+.btn-remover:hover {
     background-color: #800000;
 }
+
 .form-register {
     max-width: 700px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

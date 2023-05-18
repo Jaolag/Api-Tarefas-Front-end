@@ -9,9 +9,48 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background-image: url('/assets/img/fundo.png');
-    background-size:100%;
+    background: rgb(97,75,162);
+    background: linear-gradient(90deg, rgba(97,75,162,1) 
+    14%, rgba(55,24,147,1) 29%,
+     rgba(68,43,143,1) 45%, rgba(35,9,111,1) 56%,
+      rgba(42,19,108,1) 64%, rgba(20,2,71,1) 75%, rgba(69,44,144,1) 100%, rgba(0,212,255,1) 100%);
 }
+#mensagem-erro{
+    display: none;
+    position: fixed; /* Torna a seção fixa na tela */
+    top: 50%; /* Posiciona a seção no centro verticalmente */
+    left: 50%; /* Posiciona a seção no centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza a seção */
+    z-index: 9999; /* Define uma alta prioridade de sobreposição */
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: fade-in 0.5s; /* Adiciona uma animação de fade-in */
+}
+
+#mensagem {
+    display: none;
+    position: fixed; /* Torna a seção fixa na tela */
+    top: 50%; /* Posiciona a seção no centro verticalmente */
+    left: 50%; /* Posiciona a seção no centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza a seção */
+    z-index: 9999; /* Define uma alta prioridade de sobreposição */
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: fade-in 0.5s; /* Adiciona uma animação de fade-in */
+  }
+  
+  #mensagem p , #mensagem-erro p{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
 .container {
     max-width: 400px;
@@ -48,7 +87,7 @@ input[type="password"] {
 }
 
 button[type="submit"] {
-    background-color: 	#836FFF;
+    background-color: #836FFF;
     color: #fff;
     border: none;
     padding: 12px 20px;

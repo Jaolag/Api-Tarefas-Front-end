@@ -13,6 +13,7 @@ function criarLinhaTarefa(tarefa) {
     <td>${tarefa.prioridade}</td>
     <td>${tarefa.situacao}</td>
     <td>${tarefa.responsavel}</td>
+    
     <td><button class="btn-remover" data-id="${tarefa.id}">Remover</button></td>
   `;
 
@@ -22,11 +23,12 @@ function criarLinhaTarefa(tarefa) {
     const tarefaId = this.getAttribute("data-id");
     // Função para remover a tarefa com o ID "tarefaId"
     removerTarefa(tarefaId);
+    
   });
 
   return linha;
+  
 }
-
 function removerTarefa(id) {
   fetch(`${baseURL}/${id}`, {
     method: 'DELETE',
@@ -41,6 +43,7 @@ function removerTarefa(id) {
       // Remova a linha da tabela correspondente à tarefa removida
       const linhaRemovida = tabelaTarefas.querySelector(`tr[data-id="${id}"]`);
       linhaRemovida.remove();
+      atualizarTabelaAposRemocao();
     } else {
       // Lidar com o erro ao remover a tarefa
       console.error("Erro ao remover tarefa");
@@ -49,6 +52,13 @@ function removerTarefa(id) {
   .catch(error => console.error(error));
 }
 
+function atualizarTabelaAposRemocao() {
+  // Limpa a tabela atual
+  tabelaTarefas.innerHTML = "";
+
+  // Recarrega as tarefas do backend e exibe na tabela novamente
+  carregarTarefas();
+}
 // Função que carrega as tarefas do backend e exibe na tabela
 function carregarTarefas() {
   fetch(baseURL, {
@@ -76,7 +86,7 @@ var btnSalvar = document.querySelector("#btn-confirmar");
 // Executa a função anonima ao clicar no botão
 btnSalvar.addEventListener("click", function (event) {
     // Evita o comportamento padrão que seria recarregar a página
-    event.preventDefault();
+   
 
     // Obtem o formulário da nossa página HTML
     var frmtarefa = document.querySelector("#form-tarefa");
@@ -108,35 +118,16 @@ btnSalvar.addEventListener("click", function (event) {
         console.log(data);
         // Limpa os campos do formulário após enviar os dados
         frmtarefa.reset();
+        // Atualiza a tabela de tarefas
+        carregarTarefas();
 
         
     })
     .catch(error => console.error(error));
 });
-async function carregar_tarefas() {
-  console.log("Api - Tarefas")
 
-  const opcoes = {
-    headers: {
-      Authorization: token
-    }
-  }
-  const response = await fetch(baseURL, opcoes)
-  const status = response.status
 
-  if (response.status === 200) {
-    filmes = await response.json()
-    atualizar_tela()
-  } else {
-    // const result = await response.json()
-    alert(`Você não está autenticado!`)
-    // redicionar para tela de login
-    window.location.replace("login.html")
-  }
 
-  // console.log('Status', status)
-  // console.log('Dados', dados)
-}
 // Obtem o botão de logout da página HTML
 var btnLogout = document.querySelector("#logout");
 
@@ -146,3 +137,4 @@ function logout() {
   localStorage.clear();
   window.location.replace("/login.html");
 }
+
